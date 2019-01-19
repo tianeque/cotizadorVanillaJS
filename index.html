@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cotizador</title>
+</head>
+
+<body>
+  <h1>Cotizador Imprenta Rom</h1>
+
+  <form action="">
+    <div>
+      <label for="nombre-cliente">Nombre Cliente</label>
+      <input type="text" id="nombre-cliente" />
+    </div>
+    <div>
+      <label for="cantidad">Cantidad</label>
+      <input type="number" name="" id="cantidad" />
+    </div>
+    <div>
+      <label for="moldes">Moldes</label>
+      <input type="number" id="moldes" />
+    </div>
+    <div>
+      <label for="multiplicidad">Multiplicidad</label>
+      <input type="number" id="multiplicidad">
+    </div>
+    <div>
+        <label for="sobrantes">Sobrantes</label>
+        <input type="number" id="sobrantes">
+      </div>
+    <input type="button" value="Calcular" id="btn-calcular">
+  </form>
+  <div id="resultado"></div>
+  <script>
+
+    //declaración de variables
+    const nombreCliente = document.getElementById('nombre-cliente').value
+    const cantidad = document.getElementById('cantidad').value
+    const moldes = document.getElementById('moldes').value
+    const multiplicidad = document.getElementById('multiplicidad')
+    const btnCalcular = document.getElementById('btn-calcular')
+    const resultado = document.getElementById('resultado')
+
+    //asignacion de evento click
+    btnCalcular.addEventListener('click', calcular)
+
+    function calcular() {
+      const tirajeUtil = cantidad/moldes*multiplicidad
+      const tirajeReal = 
+    }
+  </script>
+</body>
+
+</html>
