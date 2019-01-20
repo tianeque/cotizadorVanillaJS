@@ -14,24 +14,76 @@
   <form action="">
     <div>
       <label for="nombre-cliente">Nombre Cliente</label>
-      <input type="text" id="nombre-cliente" />
+      <input type="text" id="nombre-cliente" value="sebastian" />
     </div>
     <div>
       <label for="cantidad">Cantidad</label>
-      <input type="number" name="" id="cantidad" />
+      <input type="number" name="" id="cantidad" value="100" />
     </div>
     <div>
       <label for="moldes">Moldes</label>
-      <input type="number" id="moldes" />
+      <input type="nPumber" id="moldes" value="2" />
     </div>
     <div>
       <label for="multiplicidad">Multiplicidad</label>
-      <input type="number" id="multiplicidad">
+      <input type="number" id="multiplicidad" value="3">
     </div>
     <div>
-        <label for="sobrantes">Sobrantes</label>
-        <input type="number" id="sobrantes">
-      </div>
+      <label for="sobrantes">Sobrantes</label>
+      <input type="number" id="sobrantes" value="10">
+    </div>
+    <div>
+      <label for="untal">Unidades/Talonario</label>
+      <input type="number" id="untal" value="50">
+    </div>
+    <div>
+      <label for="diseno">Valor diseño</label>
+      <input type="number" id="diseno" value="1000">
+    </div>
+    <div>
+      <label for="gastosgenerales">Gastos Generales</label>
+      <input type="number" id="gastosgenerales" value="75">
+    </div>
+    <div>
+      <label for="utilidad">Utilidad</label>
+      <input type="number" id="utilidad" value="50">
+    </div>
+    <div>
+      <label for="impuesto">Impuesto</label>
+      <input type="number" id="impuesto" value="27">
+    </div>
+    <div>
+      <label for="hojasresma">Hojas Resma</label>
+      <input type="number" id="hojasresma" value="500">
+    </div>
+    <div>
+      <label for="costoresma">Costo Resma</label>
+      <input type="number" id="costoresma" value="3000">
+    </div>
+    <div>
+      <label for="costotinta">Costo Tinta</label>
+      <input type="number" id="costotinta" value="1.6">
+    </div>
+    <div>
+      <label for="alzado">
+        <input type="checkbox" id="alzado" value="alzado" checked />Alzado</label>
+    </div>
+    <div>
+      <label for="separado">
+        <input type="checkbox" id="separado" value="separado" checked />Separado</label>
+    </div>
+    <div>
+      <label for="corcheteado">
+        <input type="checkbox" id="corcheteado" value="corcheteado" checked />Corcheteado</label>
+    </div>
+    <div>
+      <label for="corte">
+        <input type="checkbox" id="corte" value="corte" checked />Corte</label>
+    </div>
+    <div>
+      <label for="perforado">
+        <input type="checkbox" id="perforado" value="perforado" checked />Perforado</label>
+    </div>
     <input type="button" value="Calcular" id="btn-calcular">
   </form>
   <div id="resultado"></div>
@@ -41,16 +93,154 @@
     const nombreCliente = document.getElementById('nombre-cliente').value
     const cantidad = document.getElementById('cantidad').value
     const moldes = document.getElementById('moldes').value
-    const multiplicidad = document.getElementById('multiplicidad')
+    const multiplicidad = document.getElementById('multiplicidad').value
+    const sobrantes = document.getElementById('sobrantes').value
+    const untal = parseInt(document.getElementById('untal').value)
+    const diseno = parseInt(document.getElementById('diseno').value)
+    const gastosGenerales = parseInt(document.getElementById('gastosgenerales').value)
+    const utilidad = parseInt(document.getElementById('utilidad').value)
+    
+    const impuesto = parseInt(document.getElementById('impuesto').value)
+    
+    const hojasresma = document.getElementById('hojasresma').value
+    const costoresma = document.getElementById('costoresma').value
+    const costotinta = document.getElementById('costotinta').value
+    const alzado = document.getElementById('alzado').checked
+    const separado = document.getElementById('separado').checked
+    const corcheteado = document.getElementById('corcheteado').checked
+    const corte = document.getElementById('corte').checked
+    const perforado = document.getElementById('perforado').checked
+
     const btnCalcular = document.getElementById('btn-calcular')
     const resultado = document.getElementById('resultado')
 
     //asignacion de evento click
-    btnCalcular.addEventListener('click', calcular)
+    btnCalcular.addEventListener('click', mostrarResultados)
 
-    function calcular() {
-      const tirajeUtil = cantidad/moldes*multiplicidad
-      const tirajeReal = 
+    //Calculos
+    const calculos = {
+      pagoOperacionesMenores: 15,
+      pagoAlzado: 500,
+      pagoImpresion: 1600,
+      tirajeUtil: function () {
+        return cantidad / moldes * multiplicidad
+      },
+      tirajeReal: function () {
+        return this.tirajeUtil() + sobrantes * multiplicidad
+      },
+      diseno: function() {
+        return diseno
+      },
+      costoPapel: function() {
+        return costoresma / hojasresma * this.tirajeReal()
+      },
+      costoImpresion: function() {
+        return this.tirajeReal() * costotinta
+      },
+      costoManoDeObra: function() {
+        const x = this.tirajeUtil() % 1000
+        if (x==0) {
+          return this.pagoImpresion * this.tirajeUtil() / 1000
+        } else {
+          return this.pagoImpresion * parseInt( this.tirajeUtil() / 1000 + 1 )
+        }
+      },
+      costoAlzado: function() {
+        if (alzado) {
+          const x = this.tirajeUtil() % 1000
+          if (x === 0) {
+            return this.pagoAlzado * this.tirajeUtil() / 1000
+          } else {
+            return this.pagoAlzado * (parseInt(this.tirajeUtil()/1000) + 1)
+          }
+        } else {
+          return 0
+        }
+      },
+      costoPerforado: function () {
+        if (perforado) {
+          const x = this.tirajeUtil() % 1000
+          if (x === 0) {
+            return this.pagoAlzado * this.tirajeUtil() / 1000
+          } else {
+            return this.pagoAlzado * (parseInt(this.tirajeUtil()/1000) + 1)
+          }
+        } else {
+          return 0
+        }
+      },
+      costoTerminado: function() {
+        return this.tirajeUtil() / untal * this.pagoOperacionesMenores
+      },
+      costoSeparado: function() {
+        if (separado) {
+          return this.tirajeUtil() / untal * this.pagoOperacionesMenores
+        } else {
+          return 0
+        }    
+      },
+      costoCorcheteado: function (tarea) {
+        if (corcheteado) {
+          return this.tirajeUtil() / untal * this.pagoOperacionesMenores
+        } else {
+          return 0
+        } 
+      },
+      costoCorte: function (tarea) {
+        if (corte) {
+          return this.tirajeUtil() / untal * this.pagoOperacionesMenores
+        } else {
+          return 0
+        } 
+      },
+      costoOperacional: function() {
+        return this.diseno() + this.costoPapel() + this.costoImpresion() +
+        this.costoManoDeObra() + this.costoAlzado() + this.costoSeparado() +
+        this.costoCorcheteado() + this.costoCorte() + this.costoTerminado() +
+        this.costoPerforado()
+      },
+      costoTotal: function() {
+        return this.costoOperacional() * (1 + gastosGenerales/100)
+      },
+      precioDeVenta: function() {
+        precio = this.costoTotal() * (1 + utilidad/100) + impuesto/100 * this.costoTotal() * utilidad/100
+        precio = Math.ceil(precio/100)*100
+        return precio
+      },
+      precioConIVA: function() {
+        return this.precioDeVenta() * 1.19
+      }
+    }
+
+    function mostrarResultados() {
+      const template = `
+    <div>
+      <p>Tiraje real: ${$cl(calculos.tirajeReal())}</p>
+      <p>Tiraje útil: ${$cl(calculos.tirajeUtil())}</p>
+      <p>Costo papel: ${$cl(calculos.costoPapel())}</p>
+      <p>Diseño: ${$cl(calculos.diseno())}</p>
+      <p>Costo Impresión: ${$cl(calculos.costoImpresion())}</p>
+      <p>Costo Impresión Mano de Obra: ${$cl(calculos.costoManoDeObra())}</p>
+      <p>Costo alzado: ${$cl(calculos.costoAlzado())}</p>
+      <p>Costo separado: ${$cl(calculos.costoSeparado())}</p>
+      <p>Costo corcheteado: ${$cl(calculos.costoCorcheteado())}</p>
+      <p>Costo corte: ${$cl(calculos.costoCorte())}</p>
+      <p>Costo perforado: ${$cl(calculos.costoPerforado())}</p>
+      <p>Costo terminado: ${$cl(calculos.costoTerminado())}</p>
+      <hr />
+      <p>Costo operacional: ${$cl(calculos.costoOperacional())}</p>
+      <p>Costo total: ${$cl(calculos.costoTotal())}</p>
+      <p>Precio Neto: ${$cl(calculos.precioDeVenta())}</p>
+      <p>Precio con IVA: ${$cl(calculos.precioConIVA())}</p>
+    </div>
+    `
+      resultado.innerHTML = template
+    }
+
+    function $cl(number) {
+      pesos = new Intl.NumberFormat('cl-ES').format(number)
+      pesos = `$ ${pesos}`
+      return pesos
     }
   </script>
 </body>
