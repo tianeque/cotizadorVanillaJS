@@ -3,94 +3,193 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Cotizador</title>
   <!-- Firestore -->
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
 </head>
 
 <body>
-  <h1>Cotizador Imprenta Rom</h1>
+  <div class="container">
+    <h1>Cotizador Imprenta Rom</h1>
+    <div class="row">
 
-  <form action="">
-    <div>
-      <label for="nombre-cliente">Nombre Cliente</label>
-      <input type="text" id="nombre-cliente" value="sebastian" />
+      <h3>Opciones</h3>
+      <div class="col">
+        <label for="fieldset-tipo-trabajo">Tipo trabajo</label>
+        <fieldset id="fieldset-tipo-trabajo">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-carta" value="option1">
+            <label class="form-check-label" for="radio-formulario-carta">
+              Formulario carta
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-media-carta" value="option2">
+            <label class="form-check-label" for="radio-formulario-media-carta">
+              Formulario media carta
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-cuarto-carta" value="option3">
+            <label class="form-check-label" for="radio-formulario-cuarto-carta">
+              Formulario cuarto carta
+            </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-oficio" value="option1">
+              <label class="form-check-label" for="radio-formulario-oficio">
+                Formulario oficio
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-media-oficio" value="option2">
+              <label class="form-check-label" for="radio-formulario-media-oficio">
+                Formulario media oficio
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-cuarto-oficio" value="option3">
+              <label class="form-check-label" for="radio-formulario-cuarto-oficio">
+                Formulario cuarto oficio
+              </label>
+            </div>
+        </fieldset>
+      </div>
+      <div class="col">
+        <label for="fieldset-multiplicidad">multiplicidad</label>
+        <fieldset id="fieldset-multiplicidad">
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-simple" value="option1">
+              <label class="form-check-label" for="radio-simple">
+                Simple
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-duplicado" value="option2">
+              <label class="form-check-label" for="radio-duplicado">
+                Duplicado
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-triplicado" value="option3">
+              <label class="form-check-label" for="radio-triplicado">
+                Triplicado
+              </label>
+            </div>
+          </fieldset>
+      </div>
     </div>
-    <div>
-      <label for="cantidad">Cantidad</label>
-      <input type="number" name="" id="cantidad" value="100" />
-    </div>
-    <div>
-      <label for="moldes">Moldes</label>
-      <input type="nPumber" id="moldes" value="2" />
-    </div>
-    <div>
-      <label for="multiplicidad">Multiplicidad</label>
-      <input type="number" id="multiplicidad" value="3">
-    </div>
-    <div>
-      <label for="sobrantes">Sobrantes</label>
-      <input type="number" id="sobrantes" value="10">
-    </div>
-    <div>
-      <label for="untal">Unidades/Talonario</label>
-      <input type="number" id="untal" value="50">
-    </div>
-    <div>
-      <label for="diseno">Valor diseño</label>
-      <input type="number" id="diseno" value="1000">
-    </div>
-    <div>
-      <label for="gastosgenerales">Gastos Generales</label>
-      <input type="number" id="gastosgenerales" value="75">
-    </div>
-    <div>
-      <label for="utilidad">Utilidad</label>
-      <input type="number" id="utilidad" value="50">
-    </div>
-    <div>
-      <label for="impuesto">Impuesto</label>
-      <input type="number" id="impuesto" value="27">
-    </div>
-    <div>
-      <label for="hojasresma">Hojas Resma</label>
-      <input type="number" id="hojasresma" value="500">
-    </div>
-    <div>
-      <label for="costoresma">Costo Resma</label>
-      <input type="number" id="costoresma" value="3000">
-    </div>
-    <div>
-      <label for="costotinta">Costo Tinta</label>
-      <input type="number" id="costotinta" value="1.6">
-    </div>
-    <div>
-      <label for="alzado">
-        <input type="checkbox" id="alzado" value="alzado" checked />Alzado</label>
-    </div>
-    <div>
-      <label for="separado">
-        <input type="checkbox" id="separado" value="separado" checked />Separado</label>
-    </div>
-    <div>
-      <label for="corcheteado">
-        <input type="checkbox" id="corcheteado" value="corcheteado" checked />Corcheteado</label>
-    </div>
-    <div>
-      <label for="corte">
-        <input type="checkbox" id="corte" value="corte" checked />Corte</label>
-    </div>
-    <div>
-      <label for="perforado">
-        <input type="checkbox" id="perforado" value="perforado" checked />Perforado</label>
-    </div>
-    <input type="button" value="Calcular" id="btn-calcular">
-  </form>
-  <div id="resultado"></div>
-  <button id="guardar">guardar</button>
+    <hr />
+    <form action="">
+      <div>
+        <label for="nombre-cliente">Nombre Cliente</label>
+        <input class="form-control" type="text" id="nombre-cliente" value="sebastian" />
+      </div>
+      <div>
+        <label for="cantidad">Cantidad</label>
+        <input class="form-control" type="number" name="" id="cantidad" value="100" />
+      </div>
+      <div>
+        <label for="moldes">Moldes</label>
+        <input class="form-control" type="nPumber" id="moldes" value="2" />
+      </div>
+      <div>
+        <label for="multiplicidad">Multiplicidad</label>
+        <input class="form-control" type="number" id="multiplicidad" value="3">
+      </div>
+      <div>
+        <label for="sobrantes">Sobrantes</label>
+        <input class="form-control" type="number" id="sobrantes" value="10">
+      </div>
+      <div>
+        <label for="untal">Unidades/Talonario</label>
+        <input class="form-control" type="number" id="untal" value="50">
+      </div>
+      <div>
+        <label for="diseno">Valor diseño</label>
+        <input class="form-control" type="number" id="diseno" value="1000">
+      </div>
+      <div>
+        <label for="gastosgenerales">Gastos Generales</label>
+        <input class="form-control" type="number" id="gastosgenerales" value="75">
+      </div>
+      <div>
+        <label for="utilidad">Utilidad</label>
+        <input class="form-control" type="number" id="utilidad" value="50">
+      </div>
+      <div>
+        <label for="impuesto">Impuesto</label>
+        <input class="form-control" type="number" id="impuesto" value="27">
+      </div>
+      <div>
+        <label for="hojasresma">Hojas Resma</label>
+        <input class="form-control" type="number" id="hojasresma" value="500">
+      </div>
+      <div>
+        <label for="costoresma">Costo Resma</label>
+        <input class="form-control" type="number" id="costoresma" value="3000">
+      </div>
+      <div>
+        <label for="costotinta">Costo Tinta</label>
+        <input class="form-control" type="number" id="costotinta" value="1.6">
+      </div>
+      <div>
+        <label for="alzado">
+          <input class="form-check-input" type="checkbox" id="alzado" value="alzado" checked />Alzado</label>
+      </div>
+      <div>
+        <label for="separado">
+          <input class="form-check-input" type="checkbox" id="separado" value="separado" checked />Separado</label>
+      </div>
+      <div>
+        <label for="corcheteado">
+          <input class="form-check-input" type="checkbox" id="corcheteado" value="corcheteado" checked />Corcheteado</label>
+      </div>
+      <div>
+        <label for="corte">
+          <input class="form-check-input" type="checkbox" id="corte" value="corte" checked />Corte</label>
+      </div>
+      <div>
+        <label for="perforado">
+          <input class="form-check-input" type="checkbox" id="perforado" value="perforado" checked />Perforado</label>
+      </div>
+      <input class="btn btn-primary" type="button" value="Calcular" id="btn-calcular">
+    </form>
+    <div id="resultado"></div>
+    <button class="btn btn-primary" id="guardar">guardar</button>
+
+    <!--tabla de cotizaciones-->
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio Neto</th>
+          <th scope="col">Precio con IVA</th>
+        </tr>
+      </thead>
+      <tbody id="tabla">
+
+      </tbody>
+    </table>
+  </div>
+  <!--Fin tabla de cotizaciones-->
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+
   <script src="calculos.js"></script>
   <script src="firestore.js"></script>
 </body>
