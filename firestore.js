@@ -12,6 +12,7 @@ btnGuardar.addEventListener('click', guardar)
 function guardar() {
   db.collection("cotizacion").add({
     nombre,
+    tipoTrabajo,
     cantidad,
     moldes,
     multiplicidad,

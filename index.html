@@ -48,9 +48,9 @@
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-media-oficio" value="option2">
-              <label class="form-check-label" for="radio-formulario-media-oficio">
-                Formulario media oficio
+              <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-medio-oficio" value="option2">
+              <label class="form-check-label" for="radio-formulario-medio-oficio">
+                Formulario medio oficio
               </label>
             </div>
             <div class="form-check">
@@ -84,12 +84,33 @@
             </div>
           </fieldset>
       </div>
+      <div class="col">
+        <label for="fieldset-multiplicidad">Tipo de Cliente</label>
+        <fieldset id="fieldset-multiplicidad">
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-imprenta" value="option1">
+              <label class="form-check-label" for="radio-simple">
+                Imprenta
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-cliente" value="option2">
+              <label class="form-check-label" for="radio-duplicado">
+                Cliente
+              </label>
+            </div>
+          </fieldset>
+      </div>
     </div>
     <hr />
     <form action="">
       <div>
         <label for="nombre-cliente">Nombre Cliente</label>
         <input class="form-control" type="text" id="nombre-cliente" value="sebastian" />
+      </div>
+      <div>
+        <label for="tipo-trabajo">Tipo de Trabajo</label>
+        <input class="form-control" type="text" id="tipo-trabajo" value="Formulario" />
       </div>
       <div>
         <label for="cantidad">Cantidad</label>
@@ -191,6 +212,7 @@
     crossorigin="anonymous"></script>
 
   <script src="calculos.js"></script>
+  <script src="features.js"></script>
   <script src="firestore.js"></script>
 </body>
 
