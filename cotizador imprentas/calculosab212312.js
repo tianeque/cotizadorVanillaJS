@@ -1,6 +1,11 @@
-const cantidades5x1 = [5000, 10000]
-const precios5x1 = [22000, 32000]
-const precios5x1aut = [32000, 40000]
+const precios5x1 = [
+  { htmlId: 'boletas-5x1', producto: 'Boletas 5x1', cantidad: 5000, precio: 22000 },
+  { htmlId: 'boletas-5x1', producto: 'Boletas 5x1', cantidad: 10000, precio: 32000 },
+  { htmlId: 'boletas-5x1-aut', producto: 'Boletas 5x1 Aut', cantidad: 5000, precio: 32000 },
+  { htmlId: 'boletas-5x1-aut', producto: 'Boletas 5x1 Aut', cantidad: 10000, precio: 42000 }
+]
+
+
 const cantidades = [50, 100, 200, 250, 300, 400, 500, 1000, 2000, 3000, 4000, 5000]
 const parametrosEconomicos = [
   {
@@ -607,6 +612,26 @@ function mostrarResultados (id) {
   cuerpoDeTabla.innerHTML = template
 }
 
+function mostrarResultados5x1 (id) {
+  const cuerpoDeTabla = document.getElementById('cuerpo-de-tabla')
+  let template = ''
+  precios5x1.map(function (precio) {
+    if (precio.htmlId === id) {
+      template += `
+        <tr>
+          <td>${precio.producto}</th>
+          <td>${precio.cantidad}</th>
+          <td>${precio.cantidad / 250}</td>
+          <td>${parseInt(precio.precio / 1.19)}</td>
+          <td>${precio.precio}</td>
+        </tr>
+      `
+    }
+  })
+
+  cuerpoDeTabla.innerHTML = template
+}
+
 function $cl (number) {
   let pesos = new Intl.NumberFormat('cl-ES').format(number)
   pesos = `$ ${pesos}`
@@ -644,4 +669,12 @@ document.getElementById('formularios-1-2-oficio').addEventListener('click', func
 
 document.getElementById('formularios-1-4-oficio').addEventListener('click', function (event) {
   mostrarResultados(document.getElementById('formularios-1-4-oficio').id)
+})
+
+document.getElementById('boletas-5x1').addEventListener('click', function (event) {
+  mostrarResultados5x1(document.getElementById('boletas-5x1').id)
+})
+
+document.getElementById('boletas-5x1-aut').addEventListener('click', function (event) {
+  mostrarResultados5x1(document.getElementById('boletas-5x1-aut').id)
 })
