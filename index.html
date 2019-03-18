@@ -17,9 +17,10 @@
 <body>
   <div class="container">
     <h1>Cotizador Imprenta Rom</h1>
+    <!-- Inicio Opciones -->
     <div class="row">
-
       <h3>Opciones</h3>
+      <!-- Inicio Opciones: Tipo Trabajo -->
       <div class="col">
         <label for="fieldset-tipo-trabajo">Tipo trabajo</label>
         <fieldset id="fieldset-tipo-trabajo">
@@ -30,158 +31,227 @@
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-media-carta" value="option2">
+            <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-media-carta"
+              value="option2">
             <label class="form-check-label" for="radio-formulario-media-carta">
               Formulario media carta
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-cuarto-carta" value="option3">
+            <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-cuarto-carta"
+              value="option3">
             <label class="form-check-label" for="radio-formulario-cuarto-carta">
               Formulario cuarto carta
             </label>
           </div>
           <div class="form-check">
-              <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-oficio" value="option1">
-              <label class="form-check-label" for="radio-formulario-oficio">
-                Formulario oficio
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-medio-oficio" value="option2">
-              <label class="form-check-label" for="radio-formulario-medio-oficio">
-                Formulario medio oficio
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-cuarto-oficio" value="option3">
-              <label class="form-check-label" for="radio-formulario-cuarto-oficio">
-                Formulario cuarto oficio
-              </label>
-            </div>
+            <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-oficio" value="option1">
+            <label class="form-check-label" for="radio-formulario-oficio">
+              Formulario oficio
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-medio-oficio"
+              value="option2">
+            <label class="form-check-label" for="radio-formulario-medio-oficio">
+              Formulario medio oficio
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-cuarto-oficio"
+              value="option3">
+            <label class="form-check-label" for="radio-formulario-cuarto-oficio">
+              Formulario cuarto oficio
+            </label>
+          </div>
         </fieldset>
       </div>
+      <!-- Fin Opciones: Tipo Trabajo -->
+      <!-- Inicio Opciones: Multiplicidad -->
       <div class="col">
-        <label for="fieldset-multiplicidad">multiplicidad</label>
+        <label for="fieldset-multiplicidad">Multiplicidad</label>
         <fieldset id="fieldset-multiplicidad">
           <div class="form-check">
-              <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-simple" value="option1">
-              <label class="form-check-label" for="radio-simple">
-                Simple
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-duplicado" value="option2">
-              <label class="form-check-label" for="radio-duplicado">
-                Duplicado
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-triplicado" value="option3">
-              <label class="form-check-label" for="radio-triplicado">
-                Triplicado
-              </label>
-            </div>
-          </fieldset>
+            <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-simple" value="option1">
+            <label class="form-check-label" for="radio-simple">
+              Simple
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-duplicado" value="option2">
+            <label class="form-check-label" for="radio-duplicado">
+              Duplicado
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-triplicado" value="option3">
+            <label class="form-check-label" for="radio-triplicado">
+              Triplicado
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-cuadruplicado" value="option4">
+            <label class="form-check-label" for="radio-cuadruplicado">
+              Cuadruplicado
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-quintuplicado" value="option5">
+            <label class="form-check-label" for="radio-quintuplicado">
+              Quintuplicado
+            </label>
+          </div>
+        </fieldset>
       </div>
+      <!-- Fin Opciones: Multiplicidad -->
+      <!-- Inicio Opciones: Tipo de cliente -->
       <div class="col">
-        <label for="fieldset-multiplicidad">Tipo de Cliente</label>
-        <fieldset id="fieldset-multiplicidad">
-          <div class="form-check">
+        <div class="row">
+          <label for="fieldset-multiplicidad">Tipo de cliente</label>
+          <fieldset id="fieldset-multiplicidad">
+            <div class="form-check">
               <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-imprenta" value="option1">
-              <label class="form-check-label" for="radio-simple">
+              <label class="form-check-label" for="radio-imprenta">
                 Imprenta
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-cliente" value="option2">
-              <label class="form-check-label" for="radio-duplicado">
+              <label class="form-check-label" for="radio-cliente">
                 Cliente
               </label>
             </div>
           </fieldset>
+        </div>
+        <div class="row">
+          <label for="fieldset-multiplicidad">Valor diseño</label>
+          <fieldset id="fieldset-multiplicidad">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="radio-diseno" id="radio-diseno-1000" value="option1">
+              <label class="form-check-label" for="radio-diseno-1000">
+                $ 1.000
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="radio-diseno" id="radio-diseno-2000" value="option1">
+              <label class="form-check-label" for="radio-diseno-2000">
+                $ 2.000
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="radio-diseno" id="radio-diseno-5000" value="option1">
+              <label class="form-check-label" for="radio-diseno-5000">
+                $ 5.000
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="radio-diseno" id="radio-diseno-10000" value="option1">
+              <label class="form-check-label" for="radio-diseno-10000">
+                $ 10.000
+              </label>
+            </div>
+          </fieldset>
+        </div>
       </div>
+      <!-- Fin Opciones: Multiplicidad -->
     </div>
+    <!-- Fin opciones -->
     <hr />
-    <form action="">
-      <div>
-        <label for="nombre-cliente">Nombre Cliente</label>
-        <input class="form-control" type="text" id="nombre-cliente" value="sebastian" />
-      </div>
-      <div>
-        <label for="tipo-trabajo">Tipo de Trabajo</label>
-        <input class="form-control" type="text" id="tipo-trabajo" value="Formulario" />
-      </div>
-      <div>
-        <label for="cantidad">Cantidad</label>
-        <input class="form-control" type="number" name="" id="cantidad" value="100" />
-      </div>
-      <div>
-        <label for="moldes">Moldes</label>
-        <input class="form-control" type="nPumber" id="moldes" value="2" />
-      </div>
-      <div>
-        <label for="multiplicidad">Multiplicidad</label>
-        <input class="form-control" type="number" id="multiplicidad" value="3">
-      </div>
-      <div>
-        <label for="sobrantes">Sobrantes</label>
-        <input class="form-control" type="number" id="sobrantes" value="10">
-      </div>
-      <div>
-        <label for="untal">Unidades/Talonario</label>
-        <input class="form-control" type="number" id="untal" value="50">
-      </div>
-      <div>
-        <label for="diseno">Valor diseño</label>
-        <input class="form-control" type="number" id="diseno" value="1000">
-      </div>
-      <div>
-        <label for="gastosgenerales">Gastos Generales</label>
-        <input class="form-control" type="number" id="gastosgenerales" value="75">
-      </div>
-      <div>
-        <label for="utilidad">Utilidad</label>
-        <input class="form-control" type="number" id="utilidad" value="50">
-      </div>
-      <div>
-        <label for="impuesto">Impuesto</label>
-        <input class="form-control" type="number" id="impuesto" value="27">
-      </div>
-      <div>
-        <label for="hojasresma">Hojas Resma</label>
-        <input class="form-control" type="number" id="hojasresma" value="500">
-      </div>
-      <div>
-        <label for="costoresma">Costo Resma</label>
-        <input class="form-control" type="number" id="costoresma" value="3000">
-      </div>
-      <div>
-        <label for="costotinta">Costo Tinta</label>
-        <input class="form-control" type="number" id="costotinta" value="1.6">
-      </div>
-      <div>
-        <label for="alzado">
-          <input class="form-check-input" type="checkbox" id="alzado" value="alzado" checked />Alzado</label>
-      </div>
-      <div>
-        <label for="separado">
-          <input class="form-check-input" type="checkbox" id="separado" value="separado" checked />Separado</label>
-      </div>
-      <div>
-        <label for="corcheteado">
-          <input class="form-check-input" type="checkbox" id="corcheteado" value="corcheteado" checked />Corcheteado</label>
-      </div>
-      <div>
-        <label for="corte">
-          <input class="form-check-input" type="checkbox" id="corte" value="corte" checked />Corte</label>
-      </div>
-      <div>
-        <label for="perforado">
-          <input class="form-check-input" type="checkbox" id="perforado" value="perforado" checked />Perforado</label>
-      </div>
-      <input class="btn btn-primary" type="button" value="Calcular" id="btn-calcular">
-    </form>
+    <!-- Inicio Captura de datos -->
+    <div class="row">
+      <form>
+        <div>
+          <label for="nombre-cliente">Nombre Cliente</label>
+          <input class="form-control" type="text" id="nombre-cliente" />
+        </div>
+        <div>
+          <label for="tipo-trabajo">Tipo de Trabajo</label>
+          <input class="form-control" type="text" id="tipo-trabajo" />
+        </div>
+        <div>
+          <label for="tipo-cliente">Tipo de Cliente</label>
+          <input class="form-control" type="text" id="tipo-cliente" />
+        </div>
+        <div class="col">
+          <div>
+            <label for="cantidad">Cantidad</label>
+            <input class="form-control" type="number" name="" id="cantidad" />
+          </div>
+          <div>
+            <label for="moldes">Moldes</label>
+            <input class="form-control" type="nPumber" id="moldes" />
+          </div>
+          <div>
+            <label for="multiplicidad">Multiplicidad</label>
+            <input class="form-control" type="number" id="multiplicidad" />
+          </div>
+          <div>
+            <label for="sobrantes">Sobrantes</label>
+            <input class="form-control" type="number" id="sobrantes" value="10" />
+          </div>
+          <div>
+            <label for="untal">Unidades/Talonario</label>
+            <input class="form-control" type="number" id="untal" value="50" />
+          </div>
+          <div>
+            <label for="diseno">Valor diseño</label>
+            <input class="form-control" type="number" id="diseno" />
+          </div>
+        </div>
+        <div class="col">
+          <div>
+            <label for="gastos-generales">Gastos Generales</label>
+            <input class="form-control" type="number" id="gastos-generales" />
+          </div>
+          <div>
+            <label for="utilidad">Utilidad</label>
+            <input class="form-control" type="number" id="utilidad" />
+          </div>
+          <div>
+            <label for="impuesto">Impuesto</label>
+            <input class="form-control" type="number" id="impuesto" value="27" />
+          </div>
+          <div>
+            <label for="hojas-resma">Hojas Resma</label>
+            <input class="form-control" type="number" id="hojas-resma" />
+          </div>
+          <div>
+            <label for="costo-resma">Costo Resma</label>
+            <input class="form-control" type="number" id="costo-resma" />
+          </div>
+          <div>
+            <label for="costo-tinta">Costo Tinta</label>
+            <input class="form-control" type="number" id="costo-tinta" value="1.6" />
+          </div>
+        </div>
+
+        
+        <div>
+          <label for="alzado">
+            <input class="form-check-input" type="checkbox" id="alzado" value="alzado" checked />Alzado</label>
+        </div>
+        <div>
+          <label for="separado">
+            <input class="form-check-input" type="checkbox" id="separado" value="separado" checked />Separado</label>
+        </div>
+        <div>
+          <label for="corcheteado">
+            <input class="form-check-input" type="checkbox" id="corcheteado" value="corcheteado" checked />Corcheteado</label>
+        </div>
+        <div>
+          <label for="corte">
+            <input class="form-check-input" type="checkbox" id="corte" value="corte" checked />Corte</label>
+        </div>
+        <div>
+          <label for="perforado">
+            <input class="form-check-input" type="checkbox" id="perforado" value="perforado" checked />Perforado</label>
+        </div>
+        <input class="btn btn-primary" type="button" value="Calcular" id="btn-calcular">
+      </form>
+    </div>
+
+    <!-- Fin Captura de datos -->
+
     <div id="resultado"></div>
     <button class="btn btn-primary" id="guardar">guardar</button>
 
@@ -197,11 +267,12 @@
         </tr>
       </thead>
       <tbody id="tabla">
-
+        <!-- Espacio para colocar tabla de cotizaciones anteriores provenientes de firestore -->
       </tbody>
     </table>
   </div>
   <!--Fin tabla de cotizaciones-->
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

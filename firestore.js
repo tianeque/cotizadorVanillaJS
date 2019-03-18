@@ -2,17 +2,18 @@ firebase.initializeApp({
   apiKey: 'AIzaSyAdH9dZJTjKKugwhfhaIERdzkytD2NAXpk',
   authDomain: 'appcotizador.firebaseapp.com"',
   projectId: 'appcotizador'
-});
+})
 
 // Initialize Cloud Firestore through Firebase
-var db = firebase.firestore();
+var db = firebase.firestore()
 var btnGuardar = document.getElementById('guardar')
 btnGuardar.addEventListener('click', guardar)
 
-function guardar() {
-  db.collection("cotizacion").add({
+function guardar () {
+  db.collection('cotizacion').add({
     nombre,
     tipoTrabajo,
+    tipoCliente,
     cantidad,
     moldes,
     multiplicidad,
@@ -34,22 +35,21 @@ function guardar() {
     precioIva: calculos.precioConIVA()
   })
     .then(function (docRef) {
-      //console.log("Document written with ID: ", docRef.id);
+      // console.log("Document written with ID: ", docRef.id);
       document.getElementById('nombre-cliente').value = ''
     })
     .catch(function (error) {
       // console.error("Error adding document: ", error);
-    });
+    })
 }
 
-
-//leer documentos
+// leer documentos
 
 var tabla = document.getElementById('tabla')
 db.collection('cotizacion').onSnapshot((snapshot) => {
   tabla.innerHTML = ''
   snapshot.forEach((doc) => {
-    //console.log(doc.id, '=>', doc.data());
+    // console.log(doc.id, '=>', doc.data());
     tabla.innerHTML += ` 
         <tr>
             <th scope="row">${doc.id}</th>
@@ -57,5 +57,5 @@ db.collection('cotizacion').onSnapshot((snapshot) => {
             <td>${doc.data().precioNeto}</td>
             <td>${doc.data().precioIva}</td>
         </tr>`
-  });
+  })
 })
