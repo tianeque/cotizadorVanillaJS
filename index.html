@@ -10,11 +10,34 @@
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div class="container">
     <h1>Cotizador Imprenta Rom</h1>
     <!-- Inicio Opciones -->
@@ -25,7 +48,8 @@
         <label for="fieldset-tipo-trabajo">Tipo trabajo</label>
         <fieldset id="fieldset-tipo-trabajo">
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-carta" value="option1">
+            <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-carta"
+              value="option1">
             <label class="form-check-label" for="radio-formulario-carta">
               Formulario carta
             </label>
@@ -45,7 +69,8 @@
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-oficio" value="option1">
+            <input class="form-check-input" type="radio" name="radio-tipo-trabajo" id="radio-formulario-oficio"
+              value="option1">
             <label class="form-check-label" for="radio-formulario-oficio">
               Formulario oficio
             </label>
@@ -78,25 +103,29 @@
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-duplicado" value="option2">
+            <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-duplicado"
+              value="option2">
             <label class="form-check-label" for="radio-duplicado">
               Duplicado
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-triplicado" value="option3">
+            <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-triplicado"
+              value="option3">
             <label class="form-check-label" for="radio-triplicado">
               Triplicado
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-cuadruplicado" value="option4">
+            <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-cuadruplicado"
+              value="option4">
             <label class="form-check-label" for="radio-cuadruplicado">
               Cuadruplicado
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-quintuplicado" value="option5">
+            <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-quintuplicado"
+              value="option5">
             <label class="form-check-label" for="radio-quintuplicado">
               Quintuplicado
             </label>
@@ -110,13 +139,15 @@
           <label for="fieldset-multiplicidad">Tipo de cliente</label>
           <fieldset id="fieldset-multiplicidad">
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-imprenta" value="option1">
+              <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-imprenta"
+                value="option1">
               <label class="form-check-label" for="radio-imprenta">
                 Imprenta
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-cliente" value="option2">
+              <input class="form-check-input" type="radio" name="radio-multiplicidad" id="radio-cliente"
+                value="option2">
               <label class="form-check-label" for="radio-cliente">
                 Cliente
               </label>
@@ -158,21 +189,23 @@
     <!-- Fin opciones -->
     <hr />
     <!-- Inicio Captura de datos -->
-    <div class="row">
-      <form>
-        <div>
-          <label for="nombre-cliente">Nombre Cliente</label>
-          <input class="form-control" type="text" id="nombre-cliente" />
-        </div>
-        <div>
-          <label for="tipo-trabajo">Tipo de Trabajo</label>
-          <input class="form-control" type="text" id="tipo-trabajo" />
-        </div>
-        <div>
-          <label for="tipo-cliente">Tipo de Cliente</label>
-          <input class="form-control" type="text" id="tipo-cliente" />
-        </div>
+
+    <div class="container">
+      <div class="row">Informacion Tecnica</div>
+      <div class="row">
         <div class="col">
+          <div>
+            <label for="nombre-cliente">Nombre Cliente</label>
+            <input class="form-control" type="text" id="nombre-cliente" />
+          </div>
+          <div>
+            <label for="tipo-trabajo">Tipo de Trabajo</label>
+            <input class="form-control" type="text" id="tipo-trabajo" />
+          </div>
+          <div>
+            <label for="tipo-cliente">Tipo de Cliente</label>
+            <input class="form-control" type="text" id="tipo-cliente" />
+          </div>
           <div>
             <label for="cantidad">Cantidad</label>
             <input class="form-control" type="number" name="" id="cantidad" />
@@ -223,37 +256,41 @@
             <label for="costo-tinta">Costo Tinta</label>
             <input class="form-control" type="number" id="costo-tinta" value="1.6" />
           </div>
+          <div>
+            <label for="alzado">
+              <input class="form-check-input" type="checkbox" id="alzado" value="alzado" checked />Alzado</label>
+          </div>
+          <div>
+            <label for="separado">
+              <input class="form-check-input" type="checkbox" id="separado" value="separado" checked />Separado</label>
+          </div>
+          <div>
+            <label for="corcheteado">
+              <input class="form-check-input" type="checkbox" id="corcheteado" value="corcheteado"
+                checked />Corcheteado</label>
+          </div>
+          <div>
+            <label for="corte">
+              <input class="form-check-input" type="checkbox" id="corte" value="corte" checked />Corte</label>
+          </div>
+          <div>
+            <label for="perforado">
+              <input class="form-check-input" type="checkbox" id="perforado" value="perforado"
+                checked />Perforado</label>
+          </div>
         </div>
 
-        
-        <div>
-          <label for="alzado">
-            <input class="form-check-input" type="checkbox" id="alzado" value="alzado" checked />Alzado</label>
-        </div>
-        <div>
-          <label for="separado">
-            <input class="form-check-input" type="checkbox" id="separado" value="separado" checked />Separado</label>
-        </div>
-        <div>
-          <label for="corcheteado">
-            <input class="form-check-input" type="checkbox" id="corcheteado" value="corcheteado" checked />Corcheteado</label>
-        </div>
-        <div>
-          <label for="corte">
-            <input class="form-check-input" type="checkbox" id="corte" value="corte" checked />Corte</label>
-        </div>
-        <div>
-          <label for="perforado">
-            <input class="form-check-input" type="checkbox" id="perforado" value="perforado" checked />Perforado</label>
-        </div>
+      </div>
+      <div class="row botones">
+        <button class="btn btn-primary" id="guardar">guardar</button>
         <input class="btn btn-primary" type="button" value="Calcular" id="btn-calcular">
-      </form>
+      </div>
+
     </div>
 
     <!-- Fin Captura de datos -->
 
     <div id="resultado"></div>
-    <button class="btn btn-primary" id="guardar">guardar</button>
 
     <!--tabla de cotizaciones-->
 
@@ -275,12 +312,15 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+  </script>
 
   <script src="calculos.js"></script>
   <script src="features.js"></script>
