@@ -12,30 +12,12 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   <div class="container">
@@ -283,14 +265,16 @@
       </div>
       <div class="row botones">
         <button class="btn btn-primary" id="guardar">guardar</button>
-        <input class="btn btn-primary" type="button" value="Calcular" id="btn-calcular">
+        <input class="btn btn-primary" type="button" value="Calcular" id="btn-calcular-precio" data-toggle="modal"
+          data-target="#modal-resultados-precio">
+        <input class="btn btn-primary" type="button" value="Ver Detalle" id="btn-calcular-detalle" data-toggle="modal"
+          data-target="#modal-resultados-detalle">
       </div>
 
     </div>
 
     <!-- Fin Captura de datos -->
 
-    <div id="resultado"></div>
 
     <!--tabla de cotizaciones-->
 
@@ -309,6 +293,239 @@
     </table>
   </div>
   <!--Fin tabla de cotizaciones-->
+  <!-- modal precio final -->
+  <div class="modal" tabindex="-1" role="dialog" id="modal-resultados-precio">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Resultados Cotizacion</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="resultado-precio"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Guardar Cotizacion</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /modal precio final -->
+  <!-- modal detalle -->
+  <div class="modal" tabindex="-1" role="dialog" id="modal-resultados-detalle">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Resultados Cotizacion</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="resultado-detalle">detalle</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Guardar Cotizacion</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /modal detalle -->
+
+  <!-- calculadoradecorte -->
+  <div class="container-fluid calculadora-de-corte">
+    <div id="formulario">
+      <div class="row row-centered flex-row">
+        <div class="col-sm-4 ext">
+          <div class="col-sm-10 col-sm-offset-1 col-centered">
+            <h2>Introduzca Datos</h2>
+            <form class="form-horizontal" role="form" id="form_calc">
+              <h4>Tamaño del pliego</h4>
+              <!-- Ancho de papel -->
+              <div class="form-group">
+                <div class="col-sm-12 col-centered">
+                  <div class="input-group calculadoraizq">
+                    <input type="text" class="form-control" id="papel-ancho" placeholder="Ancho"
+                      aria-describedby="basic-addon2" maxlenght="5" tabindex="1" required>
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="basic-addon2">cm</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /Ancho de papel -->
+              <!-- Largo de papel -->
+              <div class="form-group">
+                <div class="col-sm-12 col-centered">
+                  <div class="input-group calculadoraizq">
+                    <input type="text" class="form-control" id="papel-largo" placeholder="Largo"
+                      aria-describedby="basic-addon2" maxlength="5" tabindex="2" required>
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="basic-addon2">cm</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /Largo de papel -->
+              <!-- Medidas de corte -->
+              <h4>Medidas de corte</h4>
+              <!-- Ancho de corte -->
+              <div class="form-group">
+                <div class="col-sm-12 col-centered">
+                  <div class="input-group calculadoraizq">
+                    <input type="text" class="form-control" id="corte-ancho" placeholder="Ancho"
+                      aria-describedby="basic-addon2" maxlength="5" tabindex="3" required />
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="basic-addon2">cm</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /Ancho de corte -->
+              <!-- Largo de corte -->
+              <div class="form-group">
+                <div class="col-sm-12 col-centered">
+                  <div class="input-group calculadoraizq">
+                    <input type="text" class="form-control" id="corte-largo" placeholder="Largo"
+                      aria-describedby="basic-addon2" maxlength="5" tabindex="4" required />
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="basic-addon2">cm</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /Largo de corte -->
+              <!-- /Medidas de corte -->
+
+              <!-- Ejemplares -->
+              <h4>Ejemplares</h4>
+              <div class="form-grouo">
+                <div class="col-sm-12 col-centered">
+                  <div class="input-group calculadoraizq">
+                    <input type="text" class="form-control" id="cortes-deseados" placeholder="Número" tabindex="5"
+                      aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="basic-addon2">un</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /Ejemplares -->
+            </form>
+            <!-- Tabla de botones -->
+            <table class="table">
+              <tr>
+                <td class="text-center">
+                  <button type="submit" tabindex="6" class="btn btn-primary" id="maximo">
+                    <i class="fa fa-th"></i>
+                  </button>
+                  <br />
+                  Máximo
+                </td>
+                <td class="text-center">
+                  <button type="submit" tabindex="7" class="btn btn-primary btn-cirle" id="orientacion-h">
+                    <i class="fa fa-arrows-h">
+                    </i>
+                  </button>
+                  <br>
+                  Horizontal
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <button type="submit" tabindex="6" class="btn btn-primary btn-circle" id="orientacion-v">
+                    <i class="fa fa-arrows-v"></i>
+                  </button>
+                  <br />
+                  Vertical
+                </td>
+                <td class="text-center">
+                  <button type="submit" tabindex="7" class="btn btn-info btn-cirle" id="reset">
+                    <i class="fa fa-refresh">
+                    </i>
+                  </button>
+                  <br>
+                  Reiniciar
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="col-sm-4 medio">
+          <div class="col-sm-12 col-centered">
+            <h2>Pliego</h2>
+            <div id="dibujo">
+              <canvas id="micanvas">
+                Su navegador no soporta estas características
+              </canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 ext">
+          <div class="col-sm-10 col-sm-offset-1 col centered">
+            <h2>Resultado</h2>
+            <table class="table table-bordered">
+              <tr>
+                <td>
+                  <label for="papel-ancho" class="control-label">Ejemplares por pliego</label>
+                </td>
+                <td>
+                  <span class="label-result" id="cortes_pliego">0</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="numero_cortes_horizontal" class="control-label">Horizontales</label>
+                </td>
+                <td>
+                  <span class="label_result" id="numero_cortes_horizontal">0</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="numero_cortes_vertical" class="control-label">Verticales</label>
+                </td>
+                <td>
+                  <span class="label-result" id="numero_cortes_vertical">0</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="pliegos" class="control-label">Total pliegos</label>
+                </td>
+                <td>
+                  <span class="label-result" id="pliegos">0</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="numero_cortes" class="control-label">Total Ejemplares</label>
+                </td>
+                <td>
+                  <span class="label-result" id="numero_cortes">0</span>
+                </td>
+              </tr>
+            </table>
+            <table class="table table-bordered">
+              <tr>
+                <td class="success"><span class="utilizada">% Utilizado</span></td>
+                <td class="warning"><span class="inutilizada">% Sin utilizar</span></td>
+              </tr>
+              <tr>
+                <td class="success"><span id="area_utilizada">0</span></td>
+                <td class="warning"><span id="area_inutilizada">0</span></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /calculadoradecorte -->
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -323,8 +540,9 @@
   </script>
 
   <script src="calculos.js"></script>
+  <script src="calculadoradecorte.js"></script>
   <script src="features.js"></script>
-  <script src="firestore.js"></script>
+  <!-- <script src="firestore.js"></script> -->
 </body>
 
 </html>

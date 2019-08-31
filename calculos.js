@@ -1,8 +1,11 @@
 
 // declaración de variables
 
-const btnCalcular = document.getElementById('btn-calcular')
-let resultado = document.getElementById('resultado')
+const btnCalcularPrecio = document.getElementById('btn-calcular-precio')
+const btnCalcularDetalle = document.getElementById('btn-calcular-detalle')
+
+let resultadoPrecio = document.getElementById('resultado-precio')
+let resultadoDetalle = document.getElementById('resultado-detalle')
 
 // Validaciones
 
@@ -74,11 +77,12 @@ function validar () {
 }
 
 // asignacion de evento click
-btnCalcular.addEventListener('click', mostrarResultados)
+btnCalcularPrecio.addEventListener('click', mostrarResultadosPrecio)
+btnCalcularDetalle.addEventListener('click', mostrarResultadosDetalle)
 
 // Calculos
 
-function calculos() {
+function calculos () {
   // let nombre = document.getElementById('nombre-cliente').value
   // let tipoTrabajo = document.getElementById('tipo-trabajo').value
   // let tipoCliente = document.getElementById('tipo-cliente').value
@@ -198,7 +202,7 @@ function calculos() {
   return calculos2
 }
 
-function mostrarResultados () {
+function mostrarResultadosDetalle () {
   let template = ''
   if (validar()) {
     template = `
@@ -225,8 +229,24 @@ function mostrarResultados () {
   } else {
     template = `<p>No se ha podido realizar el cálculo<p>`
   }
-  resultado.innerHTML = template
+  resultadoDetalle.innerHTML = template
 }
+
+function mostrarResultadosPrecio () {
+  let template = ''
+  if (validar()) {
+    template = `
+    <div>
+      <p>Precio con IVA: ${$cl(calculos().precioConIVA())}</p>
+      <p>Precio Neto: ${$cl(calculos().precioDeVenta())}</p>
+    </div>
+    `
+  } else {
+    template = `<p>No se ha podido realizar el cálculo<p>`
+  }
+  resultadoPrecio.innerHTML = template
+}
+
 
 function $cl (number) {
   let pesos = new Intl.NumberFormat('cl-ES').format(number)
