@@ -106,8 +106,8 @@ function calculos () {
 
   const calculos2 = {
 
-    pagoOperacionesMenores: 15,
-    pagoAlzado: 500,
+    pagoOperacionesMenores: 20,
+    pagoAlzado: 600,
     pagoImpresion: 1600,
     tirajeUtil: function () {
       return cantidad / moldes * multiplicidad
